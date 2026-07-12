@@ -1,3 +1,7 @@
+output "synapse_integration_runtime_azures_id" {
+  description = "Map of id values across all synapse_integration_runtime_azures, keyed the same as var.synapse_integration_runtime_azures"
+  value       = { for k, v in azurerm_synapse_integration_runtime_azure.synapse_integration_runtime_azures : k => v.id }
+}
 output "synapse_integration_runtime_azures_compute_type" {
   description = "Map of compute_type values across all synapse_integration_runtime_azures, keyed the same as var.synapse_integration_runtime_azures"
   value       = { for k, v in azurerm_synapse_integration_runtime_azure.synapse_integration_runtime_azures : k => v.compute_type }
